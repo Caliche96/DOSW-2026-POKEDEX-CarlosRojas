@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KaliMon — Manual de Identidad Visual</title>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --electric:  #00E5FF;
+  --dark:      #0D1B2A;
+  --dark-mid:  #112233;
+  --dark-card: #1A2E42;
+  --red:       #FF1C1C;
+  --gold:      #FFAA00;
+  --green:     #00A86B;
+  --pink:      #FFB6C1;
+  --white:     #FFFFFF;
+  --gray-1:    #F0F4F8;
+  --gray-2:    #D8E2EC;
+  --gray-3:    #9AA8B8;
+  --gray-5:    #3D5166;
+  --sans:      'Rajdhani', sans-serif;
+  --body:      'Inter', system-ui, sans-serif;
+  --mono:      'Space Mono', monospace;
+}
+
+body { font-family: var(--body); color: var(--dark); background: #F8FAFC; line-height: 1.6; }
+
+/* ── COVER ────────────────────────────── */
+.cover {
+  background: var(--dark);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px;
+  position: relative;
+  overflow: hidden;
+}
+.cover-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(0,229,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,229,255,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+.cover-glow {
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,229,255,0.12) 0%, transparent 70%);
+}
+.cover-glow-2 {
+  position: absolute;
+  bottom: -150px; left: -150px;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,28,28,0.10) 0%, transparent 70%);
+}
+.cover-eyebrow {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--electric);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  position: relative;
+}
+.cover-title {
+  font-family: var(--sans);
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--gold);
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+  position: relative;
+  text-shadow: 0 0 40px rgba(255,170,0,0.3);
+}
+.cover-sub {
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--white);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 60px;
+  position: relative;
+  opacity: 0.6;
+}
+.cover-divider {
+  width: 80px; height: 3px;
+  background: var(--electric);
+  margin-bottom: 40px;
+  position: relative;
+}
+.cover-meta {
+  display: flex;
+  gap: 48px;
+  position: relative;
+}
+.cover-meta-item label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--electric);
+  opacity: 0.5;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.cover-meta-item span {
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+  font-family: var(--body);
+}
+.cover-circle {
+  position: absolute;
+  right: 80px; top: 50%;
+  transform: translateY(-50%);
+  width: 360px; height: 360px;
+  border-radius: 50%;
+  border: 2px solid rgba(0,229,255,0.2);
+  display: flex; align-items: center; justify-content: center;
+}
+.cover-circle::before {
+  content: '';
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  border: 2px solid rgba(0,229,255,0.12);
+  position: absolute;
+}
+.cover-ball {
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  border: 4px solid rgba(0,229,255,0.4);
+  overflow: hidden;
+  position: relative;
+}
+.cover-ball::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 50%;
+  background: var(--red);
+}
+.cover-ball::after {
+  content: '';
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: var(--dark);
+  border: 4px solid rgba(0,229,255,0.6);
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ── PAGE ────────────────────────────── */
+.page { max-width: 960px; margin: 0 auto; padding: 80px 56px; }
+.page-divider { border: none; border-top: 1px solid var(--gray-2); margin: 0; }
+
+/* ── SECTION ────────────────────────────── */
+.section-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--electric);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-label::before {
+  content: '';
+  width: 20px; height: 2px;
+  background: var(--electric);
+}
+h2 {
+  font-family: var(--sans);
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 8px;
+  line-height: 1.1;
+}
+.section-desc {
+  font-size: 15px;
+  color: var(--gray-3);
+  margin-bottom: 40px;
+  max-width: 580px;
+  line-height: 1.7;
+}
+h3 {
+  font-family: var(--sans);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--dark);
+  margin: 40px 0 14px;
+}
+p { font-size: 15px; color: var(--gray-5); line-height: 1.75; margin-bottom: 14px; }
+
+/* ── LOGO SECTION ────────────────────────────── */
+.logo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 32px; }
+.logo-box {
+  border-radius: 16px;
+  padding: 52px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  border: 1px solid transparent;
+}
+.logo-box.light { background: var(--gray-1); border-color: var(--gray-2); }
+.logo-box.dark  { background: var(--dark); border-color: rgba(0,229,255,0.15); }
+.logo-box.tech  { background: var(--dark-mid); border-color: rgba(0,229,255,0.25); }
+.logo-box.red-bg { background: var(--red); border-color: rgba(255,255,255,0.2); }
+.logo-box label { font-size: 11px; color: var(--gray-3); font-family: var(--mono); letter-spacing: 1px; }
+.logo-box.dark label, .logo-box.tech label, .logo-box.red-bg label { color: rgba(255,255,255,0.4); }
+
+.kalimon-logo {
+  font-family: var(--sans);
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+.kalimon-logo.gold { color: var(--gold); }
+.kalimon-logo.white { color: var(--white); }
+.kalimon-logo.electric { color: var(--electric); }
+
+.kalimon-tagline {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.kalimon-logo.gold + .kalimon-tagline { color: var(--gray-3); }
+.kalimon-logo.white + .kalimon-tagline { color: rgba(255,255,255,0.4); }
+.kalimon-logo.electric + .kalimon-tagline { color: rgba(0,229,255,0.5); }
+
+/* ── PALETTE ────────────────────────────── */
+.palette-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 32px; }
+.color-card { border-radius: 14px; overflow: hidden; border: 1px solid var(--gray-2); }
+.color-swatch { height: 90px; }
+.color-info { padding: 14px 16px; background: var(--white); }
+.color-name { font-family: var(--sans); font-weight: 600; font-size: 14px; margin-bottom: 2px; color: var(--dark); }
+.color-hex { font-family: var(--mono); font-size: 12px; color: var(--gray-3); }
+.color-role { font-size: 12px; color: var(--gray-3); margin-top: 3px; }
+
+/* ── TYPOGRAPHY ────────────────────────────── */
+.type-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 32px; }
+.font-card {
+  background: var(--white);
+  border: 1px solid var(--gray-2);
+  border-radius: 14px;
+  padding: 28px;
+  border-top: 3px solid var(--electric);
+}
+.font-role {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--electric);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.font-name { font-size: 18px; font-weight: 600; color: var(--dark); margin-bottom: 3px; }
+.font-desc { font-size: 12px; color: var(--gray-3); margin-bottom: 16px; }
+.font-sample-raj { font-family: var(--sans); font-size: 22px; font-weight: 700; color: var(--dark); line-height: 1.3; }
+.font-sample-inter { font-family: var(--body); font-size: 14px; color: var(--gray-5); line-height: 1.7; }
+.font-sample-mono { font-family: var(--mono); font-size: 12px; color: var(--electric); line-height: 1.8; }
+
+.scale-card {
+  background: var(--white);
+  border: 1px solid var(--gray-2);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+.scale-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--gray-2);
+}
+.scale-row:last-child { border-bottom: none; }
+.scale-tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--gray-3);
+  min-width: 110px;
+  letter-spacing: 1px;
+}
+.scale-sample { flex: 1; }
+
+/* ── MASCOTA ────────────────────────────── */
+.mascot-area {
+  background: var(--dark);
+  border: 1px solid rgba(0,229,255,0.15);
+  border-radius: 20px;
+  padding: 48px;
+  display: flex;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+}
+.mascot-area::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,229,255,0.08) 0%, transparent 70%);
+}
+.mascot-visual {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.mascot-badge {
+  width: 140px; height: 140px;
+  border-radius: 50%;
+  background: var(--dark-mid);
+  border: 3px solid rgba(0,229,255,0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.mascot-badge::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 50%;
+  background: var(--red);
+}
+.mascot-badge::after {
+  content: '';
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: var(--dark);
+  border: 4px solid rgba(0,229,255,0.5);
+  position: relative;
+  z-index: 2;
+}
+.mascot-name { font-family: var(--mono); font-size: 12px; color: var(--electric); letter-spacing: 2px; }
+.mascot-text h3 { font-family: var(--sans); font-size: 28px; color: var(--white); margin: 0 0 8px; }
+.mascot-text p { color: rgba(255,255,255,0.5); font-size: 14px; margin-bottom: 16px; }
+.mascot-trait {
+  display: inline-block;
+  background: rgba(0,229,255,0.1);
+  color: var(--electric);
+  border: 1px solid rgba(0,229,255,0.25);
+  font-size: 11px;
+  font-family: var(--mono);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin: 4px 4px 4px 0;
+}
+
+/* ── ICONOGRAFÍA ────────────────────────────── */
+.icon-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; margin-bottom: 32px; }
+.icon-item {
+  background: var(--white);
+  border: 1px solid var(--gray-2);
+  border-radius: 12px;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.icon-item .icon-sym { font-size: 26px; }
+.icon-item span { font-size: 10px; color: var(--gray-3); font-family: var(--mono); text-align: center; }
+
+/* ── USO CORRECTO ────────────────────────────── */
+.uso-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 32px; }
+.uso-card { border-radius: 14px; padding: 24px; border: 1px solid; }
+.uso-card.si { background: #F0FFF8; border-color: var(--green); }
+.uso-card.no { background: #FFF0F0; border-color: var(--red); }
+.uso-header { font-size: 12px; font-family: var(--mono); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
+.uso-card.si .uso-header { color: var(--green); }
+.uso-card.no .uso-header { color: var(--red); }
+.uso-item { font-size: 14px; color: var(--gray-5); padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; gap: 10px; align-items: flex-start; }
+.uso-item:last-child { border-bottom: none; }
+.uso-dot { flex-shrink: 0; margin-top: 7px; width: 6px; height: 6px; border-radius: 50%; }
+.uso-card.si .uso-dot { background: var(--green); }
+.uso-card.no .uso-dot { background: var(--red); }
+
+/* ── VOZ ────────────────────────────── */
+.voz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 32px; }
+.voz-card {
+  background: var(--white);
+  border: 1px solid var(--gray-2);
+  border-left: 4px solid var(--electric);
+  border-radius: 12px;
+  padding: 22px;
+}
+.voz-title { font-family: var(--sans); font-size: 17px; font-weight: 600; color: var(--dark); margin-bottom: 6px; }
+.voz-desc { font-size: 13px; color: var(--gray-3); }
+
+/* ── UI PREVIEW ────────────────────────────── */
+.ui-preview-wrap {
+  background: var(--dark);
+  border-radius: 20px;
+  border: 1px solid rgba(0,229,255,0.15);
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+.ui-nav {
+  background: rgba(0,0,0,0.4);
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0,229,255,0.1);
+}
+.ui-nav-logo { font-family: var(--sans); font-size: 22px; font-weight: 700; color: var(--gold); }
+.ui-search {
+  flex: 1; margin: 0 24px;
+  background: rgba(0,229,255,0.06);
+  border: 1px solid rgba(0,229,255,0.15);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.3);
+  font-family: var(--body);
+}
+.ui-nav-links { display: flex; gap: 20px; font-size: 13px; color: rgba(255,255,255,0.4); font-family: var(--body); }
+.ui-nav-links .active { color: var(--electric); }
+.ui-cards { display: flex; gap: 14px; padding: 24px; }
+.ui-card {
+  flex: 1;
+  background: var(--dark-card);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 16px;
+}
+.ui-card-img {
+  width: 100%; height: 80px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 36px;
+  position: relative;
+}
+.ui-card-num { font-family: var(--mono); font-size: 11px; color: var(--electric); opacity: 0.5; margin-bottom: 3px; }
+.ui-card-name { font-family: var(--sans); font-size: 17px; font-weight: 600; color: var(--white); margin-bottom: 8px; }
+.ui-badge {
+  display: inline-block;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-family: var(--mono);
+  margin-right: 4px;
+}
+
+/* ── ESTADO ────────────────────────────── */
+.estado-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
+.estado-badge {
+  padding: 7px 18px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-family: var(--mono);
+  border: 1px solid;
+}
+
+/* ── BOTONES ────────────────────────────── */
+.btn-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; }
+.btn {
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: var(--body);
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+}
+.btn-primary { background: var(--electric); color: var(--dark); }
+.btn-danger { background: var(--red); color: var(--white); }
+.btn-outline { background: transparent; border: 1px solid rgba(0,229,255,0.35); color: var(--electric); }
+.btn-ghost { background: transparent; border: 1px solid var(--gray-2); color: var(--gray-5); }
+
+/* ── FOOTER ────────────────────────────── */
+.doc-footer {
+  background: var(--dark);
+  color: rgba(255,255,255,0.3);
+  padding: 36px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-family: var(--mono);
+  letter-spacing: 1px;
+}
+.doc-footer strong { color: var(--gold); }
+</style>
+</head>
+<body>
+
+<!-- ══ PORTADA ══ -->
+<div class="cover">
+  <div class="cover-grid"></div>
+  <div class="cover-glow"></div>
+  <div class="cover-glow-2"></div>
+  <p class="cover-eyebrow">Manual de Identidad Visual</p>
+  <div class="cover-title">KALIMON</div>
+  <div class="cover-sub">The Ultimate Pokédex · DOSW 2026</div>
+  <div class="cover-divider"></div>
+  <div class="cover-meta">
+    <div class="cover-meta-item"><label>Versión</label><span>1.0</span></div>
+    <div class="cover-meta-item"><label>Fecha</label><span>Junio 2026</span></div>
+    <div class="cover-meta-item"><label>Autor</label><span>Kaliche</span></div>
+    <div class="cover-meta-item"><label>Proyecto</label><span>DOSW Intersemestral</span></div>
+  </div>
+  <div class="cover-circle">
+    <div class="cover-ball"></div>
+  </div>
+</div>
+
+<!-- ══ ÍNDICE ══ -->
+<div class="page">
+  <p class="section-label">Contenido</p>
+  <h2>Índice</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 48px;margin-top:32px">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--gray-2)"><span style="font-size:15px;color:var(--gray-5)">01 — Nombre y logotipo</span><span style="font-family:var(--mono);font-size:12px;color:var(--electric);opacity:0.5">01</span></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--gray-2)"><span style="font-size:15px;color:var(--gray-5)">02 — Mascota KaliMon</span><span style="font-family:var(--mono);font-size:12px;color:var(--electric);opacity:0.5">02</span></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--gray-2)"><span style="font-size:15px;color:var(--gray-5)">03 — Paleta de colores</span><span style="font-family:var(--mono);font-size:12px;color:var(--electric);opacity:0.5">03</span></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--gray-2)"><span style="font-size:15px;color:var(--gray-5)">04 — Tipografía</span><span style="font-family:var(--mono);font-size:12px;color:var(--electric);opacity:0.5">04</span></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--gray-2)"><span style="font-size:15px;color:var(--gray-5)">05 — Iconografía y estilo gráfico</span><span style="font-family:var(--mono);font-size:12px;color:var(--electric);opacity:0.5">05</span></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--gray-2)"><span style="font-size:15px;color:var(--gray-5)">06 — Tono de voz</span><span style="font-family:var(--mono);font-size:12px;color:var(--electric);opacity:0.5">06</span></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--gray-2)"><span style="font-size:15px;color:var(--gray-5)">07 — Usos correctos e incorrectos</span><span style="font-family:var(--mono);font-size:12px;color:var(--electric);opacity:0.5">07</span></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--gray-2)"><span style="font-size:15px;color:var(--gray-5)">08 — Aplicación en interfaz</span><span style="font-family:var(--mono);font-size:12px;color:var(--electric);opacity:0.5">08</span></div>
+  </div>
+</div>
+
+<hr class="page-divider">
+
+<!-- ══ 01 LOGOTIPO ══ -->
+<div class="page">
+  <p class="section-label">01 — Nombre y logotipo</p>
+  <h2>KaliMon</h2>
+  <p class="section-desc">El nombre combina el apodo del creador — <strong>Kali</strong> — con <strong>Mon</strong>, abreviatura de Pokémon. El logo es un emblema circular de estética tech-gamer: oscuro, luminoso y épico, con Rayquaza y Mew flanqueando la Pokédex digital.</p>
+
+  <h3>Versiones del logotipo</h3>
+  <div class="logo-grid">
+    <div class="logo-box dark">
+      <div class="kalimon-logo gold">KALIMON</div>
+      <div class="kalimon-tagline" style="color:rgba(0,229,255,0.5);font-family:var(--mono);font-size:10px;letter-spacing:4px;margin-top:2px">THE ULTIMATE POKÉDEX</div>
+      <label>Versión principal — fondo oscuro</label>
+    </div>
+    <div class="logo-box light">
+      <div class="kalimon-logo" style="font-family:var(--sans);font-size:42px;font-weight:700;color:var(--dark)">KALIMON</div>
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:4px;color:var(--gray-3);margin-top:2px">THE ULTIMATE POKÉDEX</div>
+      <label>Versión sobre fondo claro</label>
+    </div>
+    <div class="logo-box tech">
+      <div class="kalimon-logo electric">KALIMON</div>
+      <div class="kalimon-tagline" style="color:rgba(255,255,255,0.3);font-family:var(--mono);font-size:10px;letter-spacing:4px;margin-top:2px">THE ULTIMATE POKÉDEX</div>
+      <label>Versión eléctrica — modo neón</label>
+    </div>
+    <div class="logo-box" style="background:var(--gold);border-color:rgba(0,0,0,0.1)">
+      <div class="kalimon-logo" style="font-family:var(--sans);font-size:42px;font-weight:700;color:var(--dark)">KALIMON</div>
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:4px;color:rgba(0,0,0,0.4);margin-top:2px">THE ULTIMATE POKÉDEX</div>
+      <label style="color:rgba(0,0,0,0.35)">Versión sobre dorado</label>
+    </div>
+  </div>
+
+  <h3>Emblema circular — ícono</h3>
+  <p>El emblema se usa como ícono de app, favicon o avatar cuando el espacio no permite el logotipo completo. Siempre sobre fondo oscuro (#0D1B2A).</p>
+  <div style="display:flex;gap:20px;align-items:flex-end;padding:32px;background:var(--dark);border-radius:16px;border:1px solid rgba(0,229,255,0.1);margin-bottom:20px">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
+      <div style="width:80px;height:80px;border-radius:50%;background:var(--dark-mid);border:2px solid rgba(0,229,255,0.4);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative">
+        <div style="position:absolute;top:0;left:0;right:0;height:50%;background:var(--red)"></div>
+        <div style="width:22px;height:22px;border-radius:50%;background:var(--dark);border:3px solid rgba(0,229,255,0.5);position:relative;z-index:1"></div>
+      </div>
+      <span style="font-family:var(--mono);font-size:10px;color:rgba(255,255,255,0.3)">80px</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
+      <div style="width:56px;height:56px;border-radius:50%;background:var(--dark-mid);border:2px solid rgba(0,229,255,0.4);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative">
+        <div style="position:absolute;top:0;left:0;right:0;height:50%;background:var(--red)"></div>
+        <div style="width:15px;height:15px;border-radius:50%;background:var(--dark);border:2px solid rgba(0,229,255,0.5);position:relative;z-index:1"></div>
+      </div>
+      <span style="font-family:var(--mono);font-size:10px;color:rgba(255,255,255,0.3)">56px</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
+      <div style="width:40px;height:40px;border-radius:50%;background:var(--dark-mid);border:2px solid rgba(0,229,255,0.4);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative">
+        <div style="position:absolute;top:0;left:0;right:0;height:50%;background:var(--red)"></div>
+        <div style="width:11px;height:11px;border-radius:50%;background:var(--dark);border:1.5px solid rgba(0,229,255,0.5);position:relative;z-index:1"></div>
+      </div>
+      <span style="font-family:var(--mono);font-size:10px;color:rgba(255,255,255,0.3)">40px</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
+      <div style="width:24px;height:24px;border-radius:50%;background:var(--dark-mid);border:1.5px solid rgba(0,229,255,0.4);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative">
+        <div style="position:absolute;top:0;left:0;right:0;height:50%;background:var(--red)"></div>
+        <div style="width:7px;height:7px;border-radius:50%;background:var(--dark);border:1px solid rgba(0,229,255,0.5);position:relative;z-index:1"></div>
+      </div>
+      <span style="font-family:var(--mono);font-size:10px;color:rgba(255,255,255,0.3)">24px</span>
+    </div>
+    <div style="margin-left:auto;text-align:right">
+      <div style="font-family:var(--mono);font-size:12px;color:var(--electric);margin-bottom:4px">Tamaño mínimo</div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.4)">24px — no usar por debajo de este tamaño</div>
+    </div>
+  </div>
+
+  <h3>Zona de respeto</h3>
+  <div style="background:var(--dark);border-radius:16px;border:1px solid rgba(0,229,255,0.1);padding:48px;display:flex;align-items:center;justify-content:center">
+    <div style="position:relative;padding:36px;border:1.5px dashed rgba(0,229,255,0.25);border-radius:8px">
+      <div style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--dark);padding:0 10px;font-size:10px;font-family:var(--mono);color:rgba(0,229,255,0.4);white-space:nowrap">zona de respeto = altura de "K"</div>
+      <div class="kalimon-logo gold" style="font-size:36px">KALIMON</div>
+    </div>
+  </div>
+</div>
+
+<hr class="page-divider">
+
+<!-- ══ 02 MASCOTA ══ -->
+<div class="page">
+  <p class="section-label">02 — Mascota</p>
+  <h2>El dúo KaliMon</h2>
+  <p class="section-desc">La identidad visual tiene dos guardianes: <strong>Rayquaza</strong> como el poder legendario que protege el conocimiento, y <strong>Mew</strong> como la curiosidad infinita y el origen de todo. Juntos flanquean la Pokédex digital.</p>
+
+  <div class="mascot-area">
+    <div class="mascot-visual">
+      <div class="mascot-badge"></div>
+      <div class="mascot-name">KALIMON</div>
+    </div>
+    <div class="mascot-text">
+      <h3>Rayquaza + Mew</h3>
+      <p>Rayquaza (en verde esmeralda) representa la fuerza, la protección del conocimiento y la ambición del proyecto. Mew (en rosa pastel) simboliza el origen, la curiosidad ilimitada y la rareza de los datos. La Pokédex digital entre ambos es la herramienta que los une.</p>
+      <div style="margin-top:16px">
+        <span class="mascot-trait">Épico</span>
+        <span class="mascot-trait">Tech-Gamer</span>
+        <span class="mascot-trait">Legendario</span>
+        <span class="mascot-trait">Digital</span>
+        <span class="mascot-trait">Apasionado</span>
+      </div>
+    </div>
+  </div>
+
+  <h3>Paleta de personajes</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:32px">
+    <div style="background:var(--dark);border:1px solid rgba(0,168,107,0.3);border-radius:14px;padding:24px;border-left:4px solid var(--green)">
+      <div style="font-family:var(--sans);font-size:20px;font-weight:600;color:var(--green);margin-bottom:6px">Rayquaza</div>
+      <div style="display:flex;gap:8px;margin-bottom:12px">
+        <div style="width:24px;height:24px;border-radius:50%;background:#00A86B"></div>
+        <div style="width:24px;height:24px;border-radius:50%;background:#007A4D"></div>
+        <div style="width:24px;height:24px;border-radius:50%;background:#FFD700"></div>
+      </div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.4)">Verde Esmeralda dominante · detalles dorados · ojos rojos</div>
+    </div>
+    <div style="background:var(--dark);border:1px solid rgba(255,182,193,0.3);border-radius:14px;padding:24px;border-left:4px solid var(--pink)">
+      <div style="font-family:var(--sans);font-size:20px;font-weight:600;color:var(--pink);margin-bottom:6px">Mew</div>
+      <div style="display:flex;gap:8px;margin-bottom:12px">
+        <div style="width:24px;height:24px;border-radius:50%;background:#FFB6C1"></div>
+        <div style="width:24px;height:24px;border-radius:50%;background:#FF91A4"></div>
+        <div style="width:24px;height:24px;border-radius:50%;background:#FFFFFF"></div>
+      </div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.4)">Rosa Pastel · detalles blancos · ojos azul claro</div>
+    </div>
+  </div>
+</div>
+
+<hr class="page-divider">
+
+<!-- ══ 03 PALETA ══ -->
+<div class="page">
+  <p class="section-label">03 — Paleta de colores</p>
+  <h2>Sistema cromático</h2>
+  <p class="section-desc">La paleta de KaliMon está extraída directamente del logo: tecnológica, vibrante y oscura. Cada color tiene un rol semántico preciso en la interfaz.</p>
+
+  <div class="palette-grid">
+    <div class="color-card">
+      <div class="color-swatch" style="background:#00E5FF"></div>
+      <div class="color-info">
+        <div class="color-name">Azul Eléctrico</div>
+        <div class="color-hex">#00E5FF</div>
+        <div class="color-role">Neón · interfaz digital · acento</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background:#0D1B2A"></div>
+      <div class="color-info">
+        <div class="color-name">Azul Oscuro</div>
+        <div class="color-hex">#0D1B2A</div>
+        <div class="color-role">Fondo base · escudo · tech</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background:#112233"></div>
+      <div class="color-info">
+        <div class="color-name">Azul Medio</div>
+        <div class="color-hex">#112233</div>
+        <div class="color-role">Cards · paneles · elevación</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background:#1A2E42"></div>
+      <div class="color-info">
+        <div class="color-name">Azul Card</div>
+        <div class="color-hex">#1A2E42</div>
+        <div class="color-role">Tarjetas · contenedores</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background:#FF1C1C"></div>
+      <div class="color-info">
+        <div class="color-name">Rojo Pokéball</div>
+        <div class="color-hex">#FF1C1C</div>
+        <div class="color-role">Carcasa · acciones destructivas</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background:#FFAA00"></div>
+      <div class="color-info">
+        <div class="color-name">Dorado KaliMon</div>
+        <div class="color-hex">#FFAA00</div>
+        <div class="color-role">Tipografía logo · destacados</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background:#00A86B"></div>
+      <div class="color-info">
+        <div class="color-name">Verde Rayquaza</div>
+        <div class="color-hex">#00A86B</div>
+        <div class="color-role">Éxito · aprobación · Rayquaza</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background:#FFB6C1"></div>
+      <div class="color-info">
+        <div class="color-name">Rosa Mew</div>
+        <div class="color-hex">#FFB6C1</div>
+        <div class="color-role">Especial · favoritos · Mew</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Tipos Pokémon — paleta extendida</h3>
+  <p>Cada tipo tiene un badge de color propio para filtros, etiquetas y ficha de Pokémon.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px">
+    <div style="padding:5px 14px;border-radius:20px;font-size:11px;font-family:var(--mono);font-weight:700;background:#A8A878;color:white">Normal</div>
+    <div style="padding:5px 14px;border-radius:20px;font-size:11px;font-family:var(--mono);font-weight:700;background:#C03028;color:white">Fuego</div>
+    <div style="padding:5px 14px;border-radius:20px;font-size:11px;font-family:var(--mono);font-weight:700;background:#6890F0;color:white">Agua</div>
+    <div style="padding:5px 14px;border-radius:20px;font-size:11px;font-family:var(--mono);font-weight:700;background:#78C850;color:white">Planta</div>
+    <div style="padding:5px 14px;border-radius:20px;font-size:11px;font-family:var(--mono);font-weight:700;background:#F8D030;color:#333">Eléctrico</div>
+    <div style="padding:5px 14px;border-radius:20px;font-size:11px;font-family:var(--mono);font-weight:700;background:#98D8D8;color:#333">Hielo</div>
+    <div style="padding:5px 14px;border-radius:20px;font-size:11px;font-family:var(--mono);font-weight:700;background:#C03028;color:white">Lucha</div>
+    <div style="padding:5px 14px;border-radius:20px;font-size:11px;font-family:var(--mono);font-weight:700;background:#A040A0;color:white">Veneno</div>
+    <div style="padding:5px 14px;border-radius:20px;font-size:11px;font-family:var(--mono);font-weight:700;background:#E0C068;color:#333">Tierra</div>
+    <div style="padding:5px 14px;border-radius:20px;font-size:11px;font-family:var(--mono);font-weight:700;background:#6890F0;color:white">Volador</div>
+    <div style="padding:5px 14px;border-radius:20px;font-size:11px;font-family:var(--mono);font-weight:700;background:#F85888;color:white">Psíquico</div>
+    <div style="padding:5px 14px;border-radius:20px;font-size:11px;font-family:var(--mono);font-weight:700;background:#A8B820;color:white">Bicho</div>
+    <div style="padding:5px 14px;border-radius:20px;font-size:11px;font-family:var(--mono);font-weight:700;background:#B8A038;color:white">Roca</div>
+    <div style="padding:5px 14px;border-radius:20px;font-size:11px;font-family:var(--mono);font-weight:700;background:#705898;color:white">Fantasma</div>
+    <div style="padding:5px 14px;border-radius:20px;font-size:11px;font-family:var(--mono);font-weight:700;background:#7038F8;color:white">Dragón</div>
+    <div style="padding:5px 14px;border-radius:20px;font-size:11px;font-family:var(--mono);font-weight:700;background:#705848;color:white">Siniestro</div>
+    <div style="padding:5px 14px;border-radius:20px;font-size:11px;font-family:var(--mono);font-weight:700;background:#B8B8D0;color:#333">Acero</div>
+    <div style="padding:5px 14px;border-radius:20px;font-size:11px;font-family:var(--mono);font-weight:700;background:#78CEF0;color:#333">Hada</div>
+  </div>
+</div>
+
+<hr class="page-divider">
+
+<!-- ══ 04 TIPOGRAFÍA ══ -->
+<div class="page">
+  <p class="section-label">04 — Tipografía</p>
+  <h2>Sistema tipográfico</h2>
+  <p class="section-desc">KaliMon usa tres familias con roles muy claros: una display angular para los títulos épicos, una limpia para el cuerpo de texto, y una monoespaciada para todos los datos y códigos técnicos.</p>
+
+  <div class="type-grid">
+    <div class="font-card">
+      <div class="font-role">Display · Títulos · UI</div>
+      <div class="font-name">Rajdhani</div>
+      <div class="font-desc">Bold 700 para títulos · semibold para subtítulos</div>
+      <div class="font-sample-raj">KALIMON<br>The Ultimate<br>Pokédex</div>
+    </div>
+    <div class="font-card">
+      <div class="font-role">Cuerpo · Descripciones</div>
+      <div class="font-name">Inter</div>
+      <div class="font-desc">Regular 400 · medium 500 para énfasis</div>
+      <div class="font-sample-inter">Charizard es un Pokémon de tipo Fuego y Volador. Su corazón es amable, pero no dudará en proteger a quienes lo merezcan.</div>
+    </div>
+    <div class="font-card">
+      <div class="font-role">Datos · Código · Labels</div>
+      <div class="font-name">Space Mono</div>
+      <div class="font-desc">Regular para datos · bold para resaltar</div>
+      <div class="font-sample-mono">#006 CHARIZARD<br>HP: 078 · ATK: 084<br>DEF: 078 · SP.ATK: 109<br>RF-01 · KALIMON</div>
+    </div>
+  </div>
+
+  <h3>Escala tipográfica</h3>
+  <div class="scale-card">
+    <div class="scale-row">
+      <div class="scale-tag">Display · 64px · 700</div>
+      <div class="scale-sample" style="font-family:var(--sans);font-size:48px;font-weight:700;color:var(--dark);line-height:1">KALIMON</div>
+    </div>
+    <div class="scale-row">
+      <div class="scale-tag">H1 · 36px · 700</div>
+      <div class="scale-sample" style="font-family:var(--sans);font-size:36px;font-weight:700;color:var(--dark)">Explora la Pokédex completa</div>
+    </div>
+    <div class="scale-row">
+      <div class="scale-tag">H2 · 24px · 600</div>
+      <div class="scale-sample" style="font-family:var(--sans);font-size:24px;font-weight:600;color:var(--dark)">Estadísticas base del Pokémon</div>
+    </div>
+    <div class="scale-row">
+      <div class="scale-tag">H3 · 18px · 600</div>
+      <div class="scale-sample" style="font-family:var(--sans);font-size:18px;font-weight:600;color:var(--dark)">Cadena evolutiva</div>
+    </div>
+    <div class="scale-row">
+      <div class="scale-tag">Body · 15px · 400</div>
+      <div class="scale-sample" style="font-family:var(--body);font-size:15px;color:var(--gray-5)">Texto descriptivo de Pokémon, descripciones de funcionalidades y contenido general.</div>
+    </div>
+    <div class="scale-row">
+      <div class="scale-tag">Data · 13px · 400</div>
+      <div class="scale-sample" style="font-family:var(--mono);font-size:13px;color:var(--electric)">#025 · PIKACHU · HP:35 · ATK:55 · DEF:40 · SPEED:90</div>
+    </div>
+    <div class="scale-row" style="border-bottom:none">
+      <div class="scale-tag">Label · 11px · 700</div>
+      <div class="scale-sample" style="font-family:var(--mono);font-size:11px;letter-spacing:3px;color:var(--gray-3);text-transform:uppercase">TIPO · GENERACIÓN · REGIÓN</div>
+    </div>
+  </div>
+</div>
+
+<hr class="page-divider">
+
+<!-- ══ 05 ICONOGRAFÍA ══ -->
+<div class="page">
+  <p class="section-label">05 — Iconografía y estilo gráfico</p>
+  <h2>Estilo visual</h2>
+  <p class="section-desc">KaliMon tiene una estética tech-gamer: bordes brillantes, fondos oscuros, efectos de neón controlados. Los iconos son de línea fina sobre fondos oscuros, complementados con el azul eléctrico para detalles activos.</p>
+
+  <h3>Iconos principales</h3>
+  <div class="icon-grid">
+    <div class="icon-item" style="background:var(--dark);border-color:rgba(0,229,255,0.15)"><div class="icon-sym">🔍</div><span style="color:rgba(255,255,255,0.4)">Buscar</span></div>
+    <div class="icon-item" style="background:var(--dark);border-color:rgba(0,229,255,0.15)"><div class="icon-sym">❤️</div><span style="color:rgba(255,255,255,0.4)">Favorito</span></div>
+    <div class="icon-item" style="background:var(--dark);border-color:rgba(0,229,255,0.15)"><div class="icon-sym">⚔️</div><span style="color:rgba(255,255,255,0.4)">Equipo</span></div>
+    <div class="icon-item" style="background:var(--dark);border-color:rgba(0,229,255,0.15)"><div class="icon-sym">📊</div><span style="color:rgba(255,255,255,0.4)">Stats</span></div>
+    <div class="icon-item" style="background:var(--dark);border-color:rgba(0,229,255,0.15)"><div class="icon-sym">🔗</div><span style="color:rgba(255,255,255,0.4)">Compartir</span></div>
+    <div class="icon-item" style="background:var(--dark);border-color:rgba(0,229,255,0.15)"><div class="icon-sym">👤</div><span style="color:rgba(255,255,255,0.4)">Perfil</span></div>
+    <div class="icon-item" style="background:var(--dark);border-color:rgba(0,229,255,0.15)"><div class="icon-sym">🏠</div><span style="color:rgba(255,255,255,0.4)">Inicio</span></div>
+    <div class="icon-item" style="background:var(--dark);border-color:rgba(0,229,255,0.15)"><div class="icon-sym">⚙️</div><span style="color:rgba(255,255,255,0.4)">Ajustes</span></div>
+    <div class="icon-item" style="background:var(--dark);border-color:rgba(0,229,255,0.15)"><div class="icon-sym">🔔</div><span style="color:rgba(255,255,255,0.4)">Notif.</span></div>
+    <div class="icon-item" style="background:var(--dark);border-color:rgba(0,229,255,0.15)"><div class="icon-sym">✅</div><span style="color:rgba(255,255,255,0.4)">Aprobar</span></div>
+    <div class="icon-item" style="background:var(--dark);border-color:rgba(0,229,255,0.15)"><div class="icon-sym">❌</div><span style="color:rgba(255,255,255,0.4)">Rechazar</span></div>
+    <div class="icon-item" style="background:var(--dark);border-color:rgba(0,229,255,0.15)"><div class="icon-sym">📋</div><span style="color:rgba(255,255,255,0.4)">Propuesta</span></div>
+  </div>
+
+  <h3>Principios gráficos</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:32px">
+    <div style="background:var(--dark);border:1px solid rgba(0,229,255,0.15);border-radius:12px;padding:20px">
+      <div style="font-family:var(--mono);font-size:10px;color:var(--electric);letter-spacing:2px;margin-bottom:10px">BORDES</div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.5)">Siempre 1px o 2px. Uso de rgba con el azul eléctrico para bordes activos: rgba(0,229,255,0.25)</div>
+    </div>
+    <div style="background:var(--dark);border:1px solid rgba(0,229,255,0.15);border-radius:12px;padding:20px">
+      <div style="font-family:var(--mono);font-size:10px;color:var(--electric);letter-spacing:2px;margin-bottom:10px">RADIO</div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.5)">8px para controles pequeños · 12px para cards · 16–20px para paneles grandes · 50% para badges</div>
+    </div>
+    <div style="background:var(--dark);border:1px solid rgba(0,229,255,0.15);border-radius:12px;padding:20px">
+      <div style="font-family:var(--mono);font-size:10px;color:var(--electric);letter-spacing:2px;margin-bottom:10px">NEÓN</div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.5)">El azul eléctrico (#00E5FF) puede usarse como glow sutil en elementos activos. Máximo 1 elemento por vista.</div>
+    </div>
+  </div>
+</div>
+
+<hr class="page-divider">
+
+<!-- ══ 06 TONO DE VOZ ══ -->
+<div class="page">
+  <p class="section-label">06 — Tono de voz</p>
+  <h2>Personalidad de la marca</h2>
+  <p class="section-desc">KaliMon habla como un entrenador élite que también domina la tecnología. Directo, apasionado, técnico cuando toca y épico en los momentos correctos. Nunca condescendiente, siempre en modo aventura.</p>
+
+  <div class="voz-grid">
+    <div class="voz-card">
+      <div class="voz-title">Épico pero accesible</div>
+      <div class="voz-desc">El tono tiene ambición de legendario, pero cualquier entrenador de nivel 1 puede entenderlo. No se usa jerga técnica innecesaria.</div>
+    </div>
+    <div class="voz-card">
+      <div class="voz-title">Tech-gamer auténtico</div>
+      <div class="voz-desc">KaliMon sabe de stats, competitivo y datos. Usa esa voz con propiedad, sin fingir ser algo que no es.</div>
+    </div>
+    <div class="voz-card">
+      <div class="voz-title">Personal y con firma</div>
+      <div class="voz-desc">"Kali" en el nombre no es decorativo: es la firma del creador. La app tiene personalidad propia, no es genérica.</div>
+    </div>
+    <div class="voz-card">
+      <div class="voz-title">Datos primero, emoción después</div>
+      <div class="voz-desc">La información es lo primero — precisa y clara. El entusiasmo se nota en el diseño, no en el exceso de exclamaciones.</div>
+    </div>
+  </div>
+
+  <h3>Ejemplos de copy</h3>
+  <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:32px">
+    <div style="background:#0D1B2A;border:1px solid rgba(0,229,255,0.1);border-radius:10px;padding:16px 20px;display:flex;gap:16px;align-items:flex-start">
+      <div style="background:rgba(0,229,255,0.1);border:1px solid rgba(0,229,255,0.2);border-radius:6px;padding:4px 10px;font-size:10px;font-family:var(--mono);color:var(--electric);white-space:nowrap">CTA</div>
+      <div style="font-size:14px;color:rgba(255,255,255,0.6)"><span style="color:var(--green)">✓</span> "Explorar Pokédex" &nbsp; <span style="color:var(--red)">✗</span> "Haz clic aquí para ver todos los Pokémon disponibles"</div>
+    </div>
+    <div style="background:#0D1B2A;border:1px solid rgba(0,229,255,0.1);border-radius:10px;padding:16px 20px;display:flex;gap:16px;align-items:flex-start">
+      <div style="background:rgba(0,229,255,0.1);border:1px solid rgba(0,229,255,0.2);border-radius:6px;padding:4px 10px;font-size:10px;font-family:var(--mono);color:var(--electric);white-space:nowrap">Empty state</div>
+      <div style="font-size:14px;color:rgba(255,255,255,0.6)"><span style="color:var(--green)">✓</span> "Tu equipo está vacío. Elige tu primer Pokémon." &nbsp; <span style="color:var(--red)">✗</span> "No hay Pokémon en este equipo."</div>
+    </div>
+    <div style="background:#0D1B2A;border:1px solid rgba(0,229,255,0.1);border-radius:10px;padding:16px 20px;display:flex;gap:16px;align-items:flex-start">
+      <div style="background:rgba(0,229,255,0.1);border:1px solid rgba(0,229,255,0.2);border-radius:6px;padding:4px 10px;font-size:10px;font-family:var(--mono);color:var(--electric);white-space:nowrap">Error</div>
+      <div style="font-size:14px;color:rgba(255,255,255,0.6)"><span style="color:var(--green)">✓</span> "Ese correo ya tiene cuenta. ¿Querías iniciar sesión?" &nbsp; <span style="color:var(--red)">✗</span> "Error 409: registro fallido."</div>
+    </div>
+    <div style="background:#0D1B2A;border:1px solid rgba(0,229,255,0.1);border-radius:10px;padding:16px 20px;display:flex;gap:16px;align-items:flex-start">
+      <div style="background:rgba(0,229,255,0.1);border:1px solid rgba(0,229,255,0.2);border-radius:6px;padding:4px 10px;font-size:10px;font-family:var(--mono);color:var(--electric);white-space:nowrap">Éxito</div>
+      <div style="font-size:14px;color:rgba(255,255,255,0.6)"><span style="color:var(--green)">✓</span> "Propuesta enviada. El admin la revisará pronto." &nbsp; <span style="color:var(--red)">✗</span> "¡Tu propuesta fue procesada exitosamente!"</div>
+    </div>
+  </div>
+</div>
+
+<hr class="page-divider">
+
+<!-- ══ 07 USOS CORRECTOS ══ -->
+<div class="page">
+  <p class="section-label">07 — Usos correctos e incorrectos</p>
+  <h2>Reglas de uso</h2>
+  <p class="section-desc">Para mantener la consistencia visual y el impacto de la marca KaliMon en todos los materiales, se deben respetar estas reglas sin excepción.</p>
+
+  <div class="uso-grid">
+    <div class="uso-card si">
+      <div class="uso-header">✓ Correcto</div>
+      <div class="uso-item"><div class="uso-dot"></div>Usar el logo sobre fondos oscuros (#0D1B2A o similar)</div>
+      <div class="uso-item"><div class="uso-dot"></div>Escribir siempre "KaliMon" con K mayúscula y M mayúscula</div>
+      <div class="uso-item"><div class="uso-dot"></div>Mantener el dorado (#FFAA00) exclusivo para el logotipo</div>
+      <div class="uso-item"><div class="uso-dot"></div>Usar azul eléctrico (#00E5FF) para acentos y elementos activos</div>
+      <div class="uso-item"><div class="uso-dot"></div>Mantener la Pokéball en proporciones 1:1 (círculo perfecto)</div>
+      <div class="uso-item"><div class="uso-dot"></div>Usar Rajdhani para todos los títulos y encabezados</div>
+      <div class="uso-item"><div class="uso-dot"></div>Respetar el espacio mínimo de respeto del logo (= altura de "K")</div>
+    </div>
+    <div class="uso-card no">
+      <div class="uso-header">✗ Incorrecto</div>
+      <div class="uso-item"><div class="uso-dot"></div>Colocar el logo sobre fondos claros sin versión adaptada</div>
+      <div class="uso-item"><div class="uso-dot"></div>Escribir "Kalimon", "KALIMON" en minúsculas, o "kalimon"</div>
+      <div class="uso-item"><div class="uso-dot"></div>Cambiar el color del logo a cualquier variante no autorizada</div>
+      <div class="uso-item"><div class="uso-dot"></div>Distorsionar, rotar o añadir efectos de sombra al emblema</div>
+      <div class="uso-item"><div class="uso-dot"></div>Usar el azul eléctrico como color de fondo masivo</div>
+      <div class="uso-item"><div class="uso-dot"></div>Mezclar más de 3 colores de la paleta en un mismo componente</div>
+      <div class="uso-item"><div class="uso-dot"></div>Usar Rajdhani para texto corrido de más de 3 líneas</div>
+    </div>
+  </div>
+
+  <h3>Combinaciones de color aprobadas</h3>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:32px">
+    <div style="background:var(--dark);border:1px solid rgba(0,229,255,0.2);border-radius:10px;padding:16px 20px;display:flex;gap:12px;align-items:center">
+      <div style="width:32px;height:32px;border-radius:6px;background:var(--dark)"></div>
+      <span style="color:rgba(255,255,255,0.5);font-size:12px;font-family:var(--mono)">+</span>
+      <div style="width:32px;height:32px;border-radius:6px;background:var(--electric)"></div>
+      <span style="font-size:12px;color:rgba(255,255,255,0.5)">Principal</span>
+    </div>
+    <div style="background:var(--dark);border:1px solid rgba(0,229,255,0.2);border-radius:10px;padding:16px 20px;display:flex;gap:12px;align-items:center">
+      <div style="width:32px;height:32px;border-radius:6px;background:var(--dark)"></div>
+      <span style="color:rgba(255,255,255,0.5);font-size:12px;font-family:var(--mono)">+</span>
+      <div style="width:32px;height:32px;border-radius:6px;background:var(--gold)"></div>
+      <span style="font-size:12px;color:rgba(255,255,255,0.5)">Logo</span>
+    </div>
+    <div style="background:var(--dark);border:1px solid rgba(0,229,255,0.2);border-radius:10px;padding:16px 20px;display:flex;gap:12px;align-items:center">
+      <div style="width:32px;height:32px;border-radius:6px;background:var(--dark)"></div>
+      <span style="color:rgba(255,255,255,0.5);font-size:12px;font-family:var(--mono)">+</span>
+      <div style="width:32px;height:32px;border-radius:6px;background:var(--red)"></div>
+      <span style="font-size:12px;color:rgba(255,255,255,0.5)">Acción</span>
+    </div>
+    <div style="background:var(--dark);border:1px solid rgba(0,229,255,0.2);border-radius:10px;padding:16px 20px;display:flex;gap:12px;align-items:center">
+      <div style="width:32px;height:32px;border-radius:6px;background:var(--dark)"></div>
+      <span style="color:rgba(255,255,255,0.5);font-size:12px;font-family:var(--mono)">+</span>
+      <div style="width:32px;height:32px;border-radius:6px;background:var(--green)"></div>
+      <span style="font-size:12px;color:rgba(255,255,255,0.5)">Éxito</span>
+    </div>
+  </div>
+</div>
+
+<hr class="page-divider">
+
+<!-- ══ 08 INTERFAZ ══ -->
+<div class="page">
+  <p class="section-label">08 — Aplicación en interfaz</p>
+  <h2>KaliMon en acción</h2>
+  <p class="section-desc">Así luce la identidad aplicada a los componentes principales. La interfaz es oscura, neón y data-driven — exactamente como el logo.</p>
+
+  <div class="ui-preview-wrap">
+    <div class="ui-nav">
+      <div class="ui-nav-logo">KaliMon</div>
+      <div class="ui-search">Buscar Pokémon por nombre o número Pokédex...</div>
+      <div class="ui-nav-links">
+        <span class="active">Pokédex</span>
+        <span>Equipos</span>
+        <span>Favoritos</span>
+        <span>Estadísticas</span>
+      </div>
+    </div>
+    <div class="ui-cards">
+      <div class="ui-card">
+        <div class="ui-card-img" style="background:rgba(200,48,40,0.15);border:1px solid rgba(200,48,40,0.25)">🔥</div>
+        <div class="ui-card-num">#006</div>
+        <div class="ui-card-name">Charizard</div>
+        <span class="ui-badge" style="background:rgba(200,48,40,0.25);color:#FF8A7A;border:1px solid rgba(200,48,40,0.3)">Fuego</span>
+        <span class="ui-badge" style="background:rgba(104,144,240,0.2);color:#8BB8FF;border:1px solid rgba(104,144,240,0.3)">Volador</span>
+      </div>
+      <div class="ui-card">
+        <div class="ui-card-img" style="background:rgba(104,144,240,0.15);border:1px solid rgba(104,144,240,0.25)">💧</div>
+        <div class="ui-card-num">#009</div>
+        <div class="ui-card-name">Blastoise</div>
+        <span class="ui-badge" style="background:rgba(104,144,240,0.2);color:#8BB8FF;border:1px solid rgba(104,144,240,0.3)">Agua</span>
+      </div>
+      <div class="ui-card">
+        <div class="ui-card-img" style="background:rgba(120,200,80,0.15);border:1px solid rgba(120,200,80,0.25)">🌿</div>
+        <div class="ui-card-num">#003</div>
+        <div class="ui-card-name">Venusaur</div>
+        <span class="ui-badge" style="background:rgba(120,200,80,0.2);color:#90E850;border:1px solid rgba(120,200,80,0.3)">Planta</span>
+        <span class="ui-badge" style="background:rgba(160,64,160,0.2);color:#D880D8;border:1px solid rgba(160,64,160,0.3)">Veneno</span>
+      </div>
+      <div class="ui-card" style="border-color:rgba(0,229,255,0.3)">
+        <div class="ui-card-img" style="background:rgba(0,229,255,0.08);border:1px solid rgba(0,229,255,0.2)">⚡</div>
+        <div class="ui-card-num" style="opacity:1">#025</div>
+        <div class="ui-card-name" style="color:var(--electric)">Pikachu</div>
+        <span class="ui-badge" style="background:rgba(248,208,48,0.2);color:#F8D030;border:1px solid rgba(248,208,48,0.3)">Eléctrico</span>
+      </div>
+    </div>
+  </div>
+
+  <h3>Botones y acciones</h3>
+  <div class="btn-row">
+    <button class="btn btn-primary">Explorar Pokédex</button>
+    <button class="btn btn-danger">Rechazar propuesta</button>
+    <button class="btn btn-outline">Proponer Pokémon</button>
+    <button class="btn btn-ghost">Cancelar</button>
+  </div>
+
+  <h3>Estados del sistema</h3>
+  <div class="estado-row">
+    <div class="estado-badge" style="background:rgba(255,170,0,0.1);border-color:rgba(255,170,0,0.35);color:#FFAA00">Pendiente</div>
+    <div class="estado-badge" style="background:rgba(0,168,107,0.1);border-color:rgba(0,168,107,0.35);color:var(--green)">Aprobado</div>
+    <div class="estado-badge" style="background:rgba(255,28,28,0.1);border-color:rgba(255,28,28,0.35);color:var(--red)">Rechazado</div>
+    <div class="estado-badge" style="background:rgba(0,229,255,0.08);border-color:rgba(0,229,255,0.2);color:var(--electric)">Activo</div>
+    <div class="estado-badge" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1);color:rgba(255,255,255,0.3)">Inactivo</div>
+  </div>
+
+  <h3 style="margin-top:32px">Tarjeta de estadísticas</h3>
+  <div style="background:var(--dark);border:1px solid rgba(0,229,255,0.15);border-radius:16px;padding:24px;max-width:400px">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px">
+      <div>
+        <div style="font-family:var(--mono);font-size:11px;color:var(--electric);opacity:0.5;margin-bottom:4px">#006</div>
+        <div style="font-family:var(--sans);font-size:22px;font-weight:700;color:var(--white)">Charizard</div>
+      </div>
+      <div style="display:flex;gap:6px">
+        <span class="ui-badge" style="background:rgba(200,48,40,0.25);color:#FF8A7A;border:1px solid rgba(200,48,40,0.3);font-size:11px">Fuego</span>
+        <span class="ui-badge" style="background:rgba(104,144,240,0.2);color:#8BB8FF;border:1px solid rgba(104,144,240,0.3);font-size:11px">Volador</span>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div style="display:flex;align-items:center;gap:12px">
+        <span style="font-family:var(--mono);font-size:11px;color:rgba(255,255,255,0.35);min-width:60px">HP</span>
+        <div style="flex:1;height:6px;background:rgba(255,255,255,0.06);border-radius:3px;overflow:hidden"><div style="height:100%;width:30%;background:var(--green);border-radius:3px"></div></div>
+        <span style="font-family:var(--mono);font-size:12px;color:var(--electric);min-width:30px;text-align:right">78</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <span style="font-family:var(--mono);font-size:11px;color:rgba(255,255,255,0.35);min-width:60px">ATK</span>
+        <div style="flex:1;height:6px;background:rgba(255,255,255,0.06);border-radius:3px;overflow:hidden"><div style="height:100%;width:33%;background:var(--red);border-radius:3px"></div></div>
+        <span style="font-family:var(--mono);font-size:12px;color:var(--electric);min-width:30px;text-align:right">84</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <span style="font-family:var(--mono);font-size:11px;color:rgba(255,255,255,0.35);min-width:60px">SP.ATK</span>
+        <div style="flex:1;height:6px;background:rgba(255,255,255,0.06);border-radius:3px;overflow:hidden"><div style="height:100%;width:43%;background:var(--electric);border-radius:3px"></div></div>
+        <span style="font-family:var(--mono);font-size:12px;color:var(--electric);min-width:30px;text-align:right">109</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <span style="font-family:var(--mono);font-size:11px;color:rgba(255,255,255,0.35);min-width:60px">SPEED</span>
+        <div style="flex:1;height:6px;background:rgba(255,255,255,0.06);border-radius:3px;overflow:hidden"><div style="height:100%;width:40%;background:var(--gold);border-radius:3px"></div></div>
+        <span style="font-family:var(--mono);font-size:12px;color:var(--electric);min-width:30px;text-align:right">100</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="doc-footer">
+  <div><strong>KaliMon</strong> — The Ultimate Pokédex · Manual de Identidad v1.0</div>
+  <div>DOSW · 2026 Intersemestral · Kaliche</div>
+</div>
+
+</body>
+</html>
