@@ -1,0 +1,15 @@
+package com.kalimon.pokedex.core.model;
+
+import lombok.Builder;
+import lombok.Value;
+import java.util.List;
+
+@Value
+@Builder(toBuilder = true)
+public class Team {
+    Long id;
+    String name;
+    String description;
+    Long userId;
+    List<Pokemon> pokemons;
+}
