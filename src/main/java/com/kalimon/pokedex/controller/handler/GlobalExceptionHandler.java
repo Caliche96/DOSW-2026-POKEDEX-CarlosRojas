@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.time.LocalDateTime;
 import java.util.List;
+import org.springframework.dao.DataIntegrityViolationException;
 
 @RestControllerAdvice
 @Slf4j
@@ -82,5 +83,14 @@ public class GlobalExceptionHandler {
     private ApiError build(int status, String code, String message,
                            String path, List<FieldValidationError> errors) {
         return new ApiError(status, code, message, path, LocalDateTime.now(), errors);
+    }
+    @ExceptionHandler(DataIntegrityViolationException.class)
+    public ResponseEntity<ApiError> handleDataIntegrity(
+            DataIntegrityViolationException ex, HttpServletRequest req) {
+        log.warn("Violación de integridad: {}", ex.getMessage());
+        return ResponseEntity.status(HttpStatus.CONFLICT)
+                .body(build(409, "DUPLICATE",
+                        "El correo electrónico ya está registrado",
+                        req.getRequestURI(), List.of()));
     }
 }

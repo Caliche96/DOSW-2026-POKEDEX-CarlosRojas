@@ -3,6 +3,7 @@ package com.kalimon.pokedex.controller.impl;
 import com.kalimon.pokedex.controller.api.PokemonApi;
 import com.kalimon.pokedex.controller.dto.request.PokemonRequest;
 import com.kalimon.pokedex.controller.dto.response.PokemonResponse;
+import com.kalimon.pokedex.controller.mapper.PokemonDtoMapper;
 import com.kalimon.pokedex.core.service.interfaces.PokemonService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
