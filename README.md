@@ -61,10 +61,10 @@ El proyecto contempla autenticación segura, una interfaz responsiva y accesible
 
 | Recurso | Enlace |
 |---------|--------|
-| 📌 Tablero Jira | [Ver tablero en Jira](#) |
+| 📌 Tablero Jira | [Ver tablero en Jira](https://candycode.atlassian.net/jira/software/projects/KMN/boards/34/backlog) |
 | 🎨 Prototipo Figma | [Ver prototipo en Figma](https://almond-report-15011739.figma.site/) |
 | 📄 Documento de requerimientos | [Ver documento DOSW](Docs/KaliMon_Requerimientos_DOSW.docx) |
-| 🖼️ Manual de identidad | [Ver manual de identidad](Docs/KaliMon_Manual_Identidad.html) |
+| 🖼️ Manual de identidad | [Ver manual de identidad](KaliMon_Manual_Identidad.docx) |
 
 ---
 
